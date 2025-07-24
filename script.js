@@ -497,8 +497,8 @@ function generatePlanetData(seed, isMoon = false, specificName = null) {
     const yearLengthDays = (rand() * 1000 + 50).toFixed(0);
 
     // Lists of potential names for planets and moons.
-    const planetNames = ["Xylos", "Aelon", "Veridian", "Obsidian", "Celestia", "Aethel", "Solara", "Lunara", "Titanus", "Zephyr", "Astra", "Cosmos", "Orion", "Lyra", " Lilith", "Nebula", "Terra", "Yeawn", " Eudes", "Xia", " Caleb", "Sylus", " Zayne", "Rafayel", " Xavier", "Calypso", "Aether", " Lumine"];
-    const moonNames = ["Lune", "Paimon", "Elxi", "Mao", "Tsuko", "Io", "Callisto", "Triton", "Elxi", "Oberon", "Hae", "Elxi", "Umbriel", "Mo", "Ariel", "Rhea", "Iapetus", "Daiso"];
+    const planetNames = ["Xylos", "Aelon", "Veridian", "Obsidian", "Celestia", "Aethel", "Solara", "Lunara", "Titanus", "Zephyr", "Astra", "Mo", "Orion", "Lyra", " Lilith", "Nebula", "Terra", "Yeawn", " Xavier", "Xia", " Caleb", "Sylus", " Zayne", "Rafayel", "Mao", "Calypso", "Aether", " Lumine"];
+    const moonNames = ["Lune", "Paimon", "Mo", "Mao", "Tsuko", "Io", "Callisto", "Triton", "Elxi", "Oberon", "Hae", "Elxi", "Umbriel", "Xue", "Ariel", "Rhea", "Iapetus", "Daiso"];
 
     let name;
 
