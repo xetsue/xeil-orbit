@@ -10,15 +10,15 @@ const MIN_ZOOM = 50; // Minimum zoom level (smaller numbers mean "zoomed out" mo
 const MAX_ZOOM = 200; // Maximum zoom level (larger numbers mean "zoomed in" more, showing less area).
 const ZOOM_SPEED = 5; // How much zoom changes per scroll/pinch. Higher = faster zoom.
 const SCAN_RADIUS = 100; // Distance from player to initiate a scan. Larger = scans from further away.
-const SCAN_DELAY = 1500; // Time (ms) after stopping before scan begins.
-const SCAN_DURATION = 2500; // Time (ms) it takes for a scan to complete.
+const SCAN_DELAY = 3000; // Time (ms) after stopping before scan begins.
+const SCAN_DURATION = 1500; // Time (ms) it takes for a scan to complete.
 const SCAN_DETAIL_OFFSET_X = 20; // Pixel offset for scan details panel from planet.
 const AUTOPILOT_SPEED_MULTIPLIER = 5; // How much faster autopilot is than manual movement.
 const PLANET_SIZE_MIN = 15; // Minimum character-grid size of a planet.
 const PLANET_SIZE_MAX = 22; // Maximum character-grid size of a planet.
 const MOON_SIZE_MIN = 2; // Minimum character-grid size of a moon.
-const MOON_SIZE_MAX = 8; // Maximum character-grid size of a moon.
-const MAX_MOONS = 9; // Maximum number of moons a planet can have.
+const MOON_SIZE_MAX = 10; // Maximum character-grid size of a moon.
+const MAX_MOONS = 6; // Maximum number of moons a planet can have.
 const PIXELS_PER_KM = 10000; // Conversion factor for displaying realistic distances.
 
 // Dynamic viewport sizing
