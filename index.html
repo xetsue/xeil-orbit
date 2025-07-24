@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Xeil-Orbit</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game"></div>
+    <div id="player">■</div>
+    <div id="trail-container"></div>
+    <div id="scan-container"></div>
+    <div id="controls">
+        Use WASD or arrow keys to move | Hold mouse/touch to move in that direction<br>
+        Scroll/pinch to zoom | Current zoom: <span id="zoom-level">100%</span>
+    </div>
+    <div id="mobile-controls">
+        <div class="control-area" id="left-control"></div>
+        <div class="control-area" id="right-control"></div>
+        <div class="control-area" id="up-control"></div>
+        <div class="control-area" id="down-control"></div>
+    </div>
+    <button id="code-button">+</button>
+    <div id="coordinate-display" class="minimized">
+        <div id="coordinate-text">X: 0, Y: 0</div>
+        <div id="coordinate-details">
+            <div class="coordinate-detail"><span class="coordinate-label">Scans:</span> <span id="scans-count">0</span></div>
+            <div class="coordinate-detail"><span class="coordinate-label">Route:</span> <span id="distance-travelled">0 km</span></div>
+            <div class="coordinate-detail"><span class="coordinate-label">Speed:</span> <span id="current-speed">0 km/s</span></div>
+            <br>
+            <div class="coordinate-detail"><a href="https://xetsue.github.io" target="_blank">Xsu.</a></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

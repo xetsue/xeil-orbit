@@ -1,0 +1,258 @@
+/* General body styling for background, font, and cursor */
+body {
+    margin: 0;
+    overflow: hidden;
+    background-color: #07090d; 
+    color: #fff;
+    font-family: monospace;
+    line-height: 1;
+    cursor: none;
+    touch-action: none;
+    user-select: none;
+}
+body {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+/* Styles for the main game area, acts as a canvas for characters */
+#game {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    white-space: pre;
+    font-size: 16px; /* Base font size, affects character display size */
+    letter-spacing: 0.5px; /* Spacing between characters */
+}
+/* Styles for the player character */
+#player {
+    color: #ff0000; /* Player color */
+    position: absolute;
+    z-index: 100;
+    pointer-events: none;
+}
+/* Autopilot outline for the player */
+#player.autopilot-outline {
+    outline: 2px solid white; /* outline for autopilot */
+}
+/* Container for player's trail segments */
+#trail-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 100;
+}
+/* Individual trail segment styling */
+.trail-segment {
+    position: absolute;
+    color: rgba(0, 255, 255, 0.3); /* Color and transparency of trail */
+}
+/* On-screen controls display */
+#controls {
+    position: fixed;
+    bottom: 20px;
+    width: 100%;
+    text-align: center;
+    opacity: 1;
+    transition: opacity 1s ease-out;
+    font-size: 20px;
+    color: #aaa;
+    pointer-events: none;
+}
+/* Mobile controls container */
+#mobile-controls {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 150px;
+    display: none; /* Hidden by default, shown on mobile */
+    z-index: 1000;
+}
+/* Common styles for mobile control areas */
+.control-area {
+    position: absolute;
+    width: 40%;
+    height: 100%;
+    opacity: 0.3;
+}
+/* Specific mobile control area colors */
+#left-control {
+    left: 0;
+    background-color: red;
+}
+#right-control {
+    right: 0;
+    background-color: blue;
+}
+#up-control {
+    left: 40%;
+    width: 20%;
+    height: 50%;
+    top: 0;
+    background-color: green;
+}
+#down-control {
+    left: 40%;
+    width: 20%;
+    height: 50%;
+    bottom: 0;
+    background-color: yellow;
+}
+
+/* Scanning UI */
+/* Outline around scannable objects */
+.scan-outline {
+    position: absolute;
+    border: 1px solid white; /* Color and thickness of scan outline */
+    border-radius: 50%; /* Makes outline circular */
+    box-sizing: border-box;
+    pointer-events: none;
+    z-index: 101;
+}
+/* Container for loading bar inside scan outline */
+.scan-loading-bar-container {
+    position: absolute;
+    width: 100%;
+    height: 8px; /* Height of the loading bar */
+    background-color: rgba(255, 255, 255, 0.3); /* Background of loading bar */
+    bottom: -20px;
+    left: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 102;
+}
+/* Actual loading bar fill */
+.scan-loading-bar {
+    width: 0%;
+    height: 100%;
+    background-color: white; /* Color of the loading bar fill */
+    transition: width 0.1s linear; /* Smooth animation for loading progress */
+}
+/* Scan details panel */
+.scan-details {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.7); /* Background of the details box */
+    border: 1px solid white; /* Border of the details box */
+    color: white; /* Text color in details box */
+    padding: 15px; /* Increased padding again */
+    font-size: 24px; /* Significantly larger font size for details */
+    white-space: pre;
+    pointer-events: none;
+    z-index: 103;
+    transform: translateX(100%); /* Initially off-screen */
+    transition: transform 0.3s ease-out; /* Slide-in animation */
+}
+/* Makes scan details visible */
+.scan-details.visible {
+    transform: translateX(0); /* Slides into view */
+}
+/* Container for all scanning UI elements */
+.scan-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 101;
+}
+
+/* Code Button */
+#code-button {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    background-color: transparent;
+    color: #fff;
+    border: 1px solid #555;
+    border-radius: 12px;
+    padding: 10px 18px;
+    font-family: monospace;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 1001;
+}
+#code-button:hover {
+    background-color: rgba(85, 85, 85, 0.5);
+}
+
+/* Coordinate Display */
+#coordinate-display {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 1px solid #555;
+    border-radius: 12px;
+    padding: 10px;
+    font-family: monospace;
+    font-size: 20px;
+    z-index: 1001;
+    cursor: pointer;
+    max-width: 300px; /* Max width when expanded */
+    overflow: hidden;
+    transition: all 0.3s ease; /* Smooth transition for expansion/minimization */
+}
+/* Expanded state of coordinate display */
+#coordinate-display.expanded {
+    max-height: 500px; /* Max height when expanded */
+    padding: 15px;
+}
+/* Minimized state of coordinate display */
+#coordinate-display.minimized {
+    max-height: 40px; /* Max height when minimized (just shows coordinates) */
+}
+/* Styles for the main coordinate text (X: Y:) */
+#coordinate-text {
+    font-weight: bold;
+}
+/* Container for detailed coordinate info */
+#coordinate-details {
+    margin-top: 10px;
+    font-size: 18px;
+    opacity: 0; /* Hidden by default */
+    max-height: 0; /* Collapsed by default */
+    overflow: hidden;
+    transition: opacity 0.3s ease, max-height 0.3s ease; /* Smooth animation */
+}
+/* Makes detailed coordinate info visible when expanded */
+#coordinate-display.expanded #coordinate-details {
+    opacity: 1; /* Fades in */
+    max-height: 400px; /* Expands to show details */
+}
+/* Individual detail lines */
+.coordinate-detail {
+    margin: 5px 0;
+}
+/* Labels for coordinate details */
+.coordinate-label {
+    color: #aaa;
+}
+
+/* Media queries for responsiveness on smaller screens */
+@media (max-width: 768px) {
+    #mobile-controls {
+        display: block; /* Shows mobile controls */
+    }
+    #game {
+        font-size: 14px; /* Smaller font size for game characters */
+    }
+    .scan-details {
+        font-size: 20px; /* Smaller font for scan details */
+    }
+    #code-button {
+        font-size: 18px;
+        padding: 8px 15px;
+    }
+    #coordinate-display {
+        font-size: 16px;
+        max-width: 200px;
+    }
+    #coordinate-details {
+        font-size: 14px;
+    }
+}
